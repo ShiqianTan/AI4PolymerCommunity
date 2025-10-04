@@ -1,0 +1,70 @@
+# _config.yml for AI4Polymer Community Website
+
+# Site settings
+title: AI4Polymer Community
+description: >-
+  The premier community hub for artificial intelligence-driven polymer 
+  materials research, design, and discovery
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://shiqiantan.github.io" # your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Collections for organizing content
+collections:
+  papers:
+    output: true
+    permalink: /:collection/:name/
+  databases:
+    output: true
+    permalink: /:collection/:name/
+  tutorials:
+    output: true
+    permalink: /:collection/:name/
+  algorithms:
+    output: true
+    permalink: /:collection/:name/
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Paper Survey
+    url: /papers/
+  - title: Databases
+    url: /databases/
+  - title: Tutorials
+    url: /tutorials/
+  - title: ML Algorithms
+    url: /algorithms/
+  - title: Web Predictor
+    url: /predictor/
+  - title: Community
+    url: /community/
+
+# Social links
+github_username: ShiqianTan
+email: tanshiqian@outlook.com
+linkedin_username: shiqiantan
+
+# Google Analytics (optional)
+google_analytics: UA-XXXXXXXXX-X
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

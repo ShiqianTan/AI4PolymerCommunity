@@ -1,0 +1,15 @@
+[submodule "content/papers"]
+	path = content/papers
+	url = https://github.com/ShiqianTan/AI4Polymer.git
+[submodule "content/databases"]
+	path = content/databases
+	url = https://github.com/ShiqianTan/PolymerDatabaseCollection.git
+[submodule "content/tutorials"]
+	path = content/tutorials
+	url = https://github.com/ShiqianTan/AI4PolymerTutorial.git
+[submodule "content/algorithms"]
+	path = content/algorithms
+	url = https://github.com/ShiqianTan/PyPolyML.git
+[submodule "content/predictor"]
+	path = content/predictor
+	url = https://github.com/ShiqianTan/OpenPolymerPredictor.git

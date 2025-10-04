@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI4Polymer - Community Hub for AI-Driven Polymer Science</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .repositories {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 60px;
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .repo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .repo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .repo-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .repo-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .repo-card p {
+            color: #718096;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .repo-link {
+            display: inline-flex;
+            align-items: center;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .repo-link:hover {
+            color: #5a67d8;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 60px 0;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .community {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .repo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI4Polymer</h1>
+            <p>The premier community hub for artificial intelligence-driven polymer materials research, design, and discovery</p>
+            <div class="cta-buttons">
+                <a href="#repositories" class="btn btn-primary">Explore Resources</a>
+                <a href="https://github.com/ShiqianTan" class="btn btn-secondary">View GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Research Papers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Databases</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>ML Algorithms</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5</h3>
+                    <p>Core Repositories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repositories Section -->
+    <section id="repositories" class="repositories">
+        <div class="container">
+            <h2 class="section-title">Core Resources</h2>
+            <p class="section-subtitle">Comprehensive collection of tools, data, and knowledge for AI-driven polymer research</p>
+            
+            <div class="repo-grid">
+                <div class="repo-card">
+                    <div class="repo-icon" style="background: linear-gradient(45deg, #FF6B6B, #FF8E53);">📚</div>
+                    <h3>Paper Survey</h3>
+                    <p>Curated collection of 1000+ research papers on AI-driven polymer materials research, covering design, prediction, characterization, and related technologies.</p>
+                    <a href="https://github.com/ShiqianTan/AI4Polymer" class="repo-link">
+                        Explore Papers →
+                    </a>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-icon" style="background: linear-gradient(45deg, #4ECDC4, #44A08D);">🗄️</div>
+                    <h3>Database Collection</h3>
+                    <p>Comprehensive compilation of 50+ polymer databases including PolyInfo, Polymer Genome, and specialized datasets for materials discovery.</p>
+                    <a href="https://github.com/ShiqianTan/PolymerDatabaseCollection" class="repo-link">
+                        Access Databases →
+                    </a>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-icon" style="background: linear-gradient(45deg, #A8EDEA, #FED6E3);">🎓</div>
+                    <h3>Tutorials</h3>
+                    <p>Step-by-step tutorials and educational materials for learning AI applications in polymer science, from basics to advanced techniques.</p>
+                    <a href="https://github.com/ShiqianTan/AI4PolymerTutorial" class="repo-link">
+                        Start Learning →
+                    </a>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-icon" style="background: linear-gradient(45deg, #667eea, #764ba2);">⚙️</div>
+                    <h3>ML Algorithms</h3>
+                    <p>PyPolyML: Python library with machine learning algorithms specifically designed for polymer property prediction and materials design.</p>
+                    <a href="https://github.com/ShiqianTan/PyPolyML" class="repo-link">
+                        Use Algorithms →
+                    </a>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-icon" style="background: linear-gradient(45deg, #ffecd2, #fcb69f);">🌐</div>
+                    <h3>Web Predictor</h3>
+                    <p>OpenPolymerPredictor: Interactive Flask web application for real-time polymer property prediction using trained ML models.</p>
+                    <a href="https://github.com/ShiqianTan/OpenPolymerPredictor" class="repo-link">
+                        Try Predictor →
+                    </a>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-icon" style="background: linear-gradient(45deg, #a8caba, #5d4e75);">🤝</div>
+                    <h3>Community Hub</h3>
+                    <p>Central platform for discussions, collaborations, and sharing discoveries in the AI4Polymer community ecosystem.</p>
+                    <a href="#community" class="repo-link">
+                        Join Community →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Features -->
+    <section id="community" class="community">
+        <div class="container">
+            <h2 class="section-title">Community Features</h2>
+            <p class="section-subtitle">Building the future of polymer science through collaborative AI research</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research Collaboration</h3>
+                    <p>Connect with researchers worldwide working on AI-driven polymer discovery and share methodologies</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Sharing</h3>
+                    <p>Access and contribute to comprehensive polymer datasets for training better ML models</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Tool Development</h3>
+                    <p>Collaborate on developing cutting-edge tools and algorithms for polymer informatics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/ShiqianTan">GitHub</a>
+                <a href="mailto:tanshiqian@outlook.com">Contact</a>
+                <a href="https://www.linkedin.com/in/shiqiantan">LinkedIn</a>
+                <a href="#repositories">Resources</a>
+            </div>
+            <p>&copy; 2025 AI4Polymer Community. Advancing polymer science through artificial intelligence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe repo cards
+        document.querySelectorAll('.repo-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
