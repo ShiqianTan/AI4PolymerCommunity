@@ -61,3 +61,22 @@ Based on your excellent existing repositories, here's your roadmap to create a c
 - **Community Features**: Discussion forums, contributor profiles
 
 Would you like me to help you with any specific part of the implementation, such as creating the repository structure, setting up GitHub Actions for automation, or developing additional interactive features?
+
+<!-- Add to community page -->
+## 💬 Join the Discussion
+
+<script src="https://giscus.app/client.js"
+        data-repo="ShiqianTan/AI4Polymer-Community"
+        data-repo-id="YOUR_REPO_ID"
+        data-category="General"
+        data-category-id="YOUR_CATEGORY_ID"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>

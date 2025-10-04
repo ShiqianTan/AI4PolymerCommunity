@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} | AI4Polymer</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  {% include navigation.html %}
+  
+  <main class="repository-content">
+    <div class="container">
+      <header class="repo-header">
+        <h1>{{ page.title }}</h1>
+        <p class="repo-description">{{ page.description }}</p>
+        <div class="repo-stats">
+          <a href="{{ page.github_url }}" class="btn btn-github">
+            View on GitHub
+          </a>
+          <span class="stat">⭐ {{ page.stars | default: "N/A" }}</span>
+          <span class="stat">🍴 {{ page.forks | default: "N/A" }}</span>
+        </div>
+      </header>
+      
+      <div class="repo-content">
+        {{ content }}
+      </div>
+    </div>
+  </main>
+  
+  {% include footer.html %}
+</body>
+</html>
