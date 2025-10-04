@@ -1,0 +1,27 @@
+/* assets/css/main.css */
+.discussion-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px 0;
+}
+
+.discussion-section h2 {
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.discussion-section p {
+    color: #718096;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Giscus主题定制 */
+.giscus {
+    max-width: 100% !important;
+}
+
+.giscus-frame {
+    border-radius: 10px !important;
+}
